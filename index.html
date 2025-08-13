@@ -1,0 +1,314 @@
+<!--  -->
+<!--  -->
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:300,400,500,600,700&family=Merriweather:300,400,500,600,700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Roast & Ritual — Coffee House</title>
+  <meta name="description" content="Roast & Ritual — specialty coffee shop. Fresh beans, seasonal drinks, and cozy vibes." />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts (also declared above as comments for build system) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Use Google Fonts */
+    :root { --font-sans: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; --font-serif: 'Merriweather', Georgia, serif; }
+    body { font-family: var(--font-sans); }
+  </style>
+</head>
+<body style="font-family: 'Poppins', sans-serif;" class="bg-gray-50 text-gray-800 antialiased w-full max-w-none">
+  <!-- NAV -->
+  <header class="w-full max-w-none bg-white/80 backdrop-blur sticky top-0 z-40 shadow-sm">
+    <div class="w-full max-w-none flex items-center justify-between px-6 py-4">
+      <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-yellow-600 flex items-center justify-center text-white font-bold animate-pulse">R</div>
+        <div class="leading-tight">
+          <div class="text-lg font-semibold">Roast & Ritual</div>
+          <div class="text-xs text-gray-500">Coffee House</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 font-medium text-gray-700">
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="hover:text-yellow-700 transition">Home</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'about.html\'); return false;" class="hover:text-yellow-700 transition">About</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="hover:text-yellow-700 transition">Contact</a>
+        <button id="openNewsletter" class="bg-yellow-600 text-white px-4 py-2 rounded shadow hover:shadow-lg transition transform hover:-translate-y-0.5">Subscribe</button>
+      </nav>
+      <div class="md:hidden">
+        <button id="mobileMenuBtn" class="p-2 rounded bg-gray-100 hover:bg-gray-200">
+          <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Nav -->
+    <div id="mobileNav" class="hidden md:hidden px-6 pb-4">
+      <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="block py-2 text-gray-700">Home</a>
+      <a href="#" onclick="window.parent.handlePreviewNavigation(\'about.html\'); return false;" class="block py-2 text-gray-700">About</a>
+      <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="block py-2 text-gray-700">Contact</a>
+      <button id="mobileSubscribe" class="w-full mt-2 bg-yellow-600 text-white py-2 rounded">Subscribe</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main class="w-full max-w-none">
+    <section class="w-full relative">
+      <img src="https://images.unsplash.com/photo-1651964372883-c6bd2124f90f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwxMHx8YSUyMHdhcm0lMjB3aWRlLWFuZ2xlJTIwcGhvdG8lMjBvZiUyMGElMjBjb2ZmZWUlMjBzaG9wJTIwaW50ZXJpb3IlMjB3aXRoJTIwc3VubGlnaHQlMjBzdHJlYW1pbmclMjB0aHJvdWdoJTIwbGFyZ2UlMjB3aW5kb3dzJTJDJTIwYmFyaXN0YSUyMG1ha2luZyUyMGVzcHJlc3NvJTJDJTIwd29vZGVuJTIwdGFibGVzJTIwYW5kJTIwcGxhbnRzfGVufDB8MHx8fDE3NTUxMTE5MzF8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Coffee shop interior" class="w-full h-[60vh] object-cover brightness-90">
+      <div class="absolute inset-0 flex items-center justify-start px-6 md:px-20">
+        <div class="bg-gradient-to-r from-black/40 to-black/10 p-6 md:p-10 rounded-lg backdrop-blur-sm max-w-none w-full md:w-2/3">
+          <h1 class="text-3xl md:text-5xl text-white font-bold leading-tight" style="font-family: var(--font-serif);">Roast & Ritual</h1>
+          <p class="mt-2 md:mt-4 text-yellow-100">Specialty coffee, curated beans, seasonal drinks. Your neighborhood ritual starts here.</p>
+          <div class="mt-4 flex gap-3">
+            <a href="#menu" class="inline-block bg-yellow-500 text-white px-4 py-2 rounded shadow hover:shadow-lg transition transform hover:-translate-y-1">Explore Menu</a>
+            <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="inline-block bg-white text-gray-800 px-4 py-2 rounded shadow hover:shadow-lg transition">Visit Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="w-full px-6 md:px-20 py-10 bg-white">
+      <div class="w-full flex flex-col md:flex-row items-start gap-6">
+        <div class="flex-1 p-6 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition transform hover:-translate-y-1">
+          <h3 class="text-lg font-semibold">Freshly Roasted Beans</h3>
+          <p class="mt-2 text-sm text-gray-600">We roast small batches weekly to bring out characterful profiles for espresso and filter brew.</p>
+        </div>
+        <div class="flex-1 p-6 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition transform hover:-translate-y-1">
+          <h3 class="text-lg font-semibold">Expert Baristas</h3>
+          <p class="mt-2 text-sm text-gray-600">Precision in every cup — hand-pulled espresso and carefully dialed brew methods.</p>
+        </div>
+        <div class="flex-1 p-6 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition transform hover:-translate-y-1">
+          <h3 class="text-lg font-semibold">Cozy Community Space</h3>
+          <p class="mt-2 text-sm text-gray-600">Comfortable seating, local art, and the perfect atmosphere to work or relax.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu" class="w-full px-6 md:px-20 py-10">
+      <div class="w-full flex items-center justify-between">
+        <h2 class="text-2xl font-bold">Menu</h2>
+        <div class="text-sm text-gray-600">Tap a category to filter</div>
+      </div>
+
+      <div class="mt-4 flex gap-3 flex-wrap">
+        <button class="filterBtn px-4 py-2 rounded bg-yellow-600 text-white" data-filter="all">All</button>
+        <button class="filterBtn px-4 py-2 rounded bg-gray-100 hover:bg-gray-200" data-filter="espresso">Espresso</button>
+        <button class="filterBtn px-4 py-2 rounded bg-gray-100 hover:bg-gray-200" data-filter="brew">Brew</button>
+        <button class="filterBtn px-4 py-2 rounded bg-gray-100 hover:bg-gray-200" data-filter="pastry">Pastries</button>
+      </div>
+
+      <div id="menuGrid" class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-none">
+        <!-- Menu items (data-category attributes used for filtering) -->
+        <div class="menuItem p-4 bg-white rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-1" data-category="espresso">
+          <img src="https://pixabay.com/get/g90b819fb624350cb4a156d8dd2293658ff351ed464e479bf4b86b102b8a972f36604481e6a37d87feeba274374cdb9f571b4b7e00bf50c3b63b5588b0d0365cb_640.jpg" alt="Espresso" class="w-full h-40 object-cover rounded">
+          <h3 class="mt-3 font-semibold">Classic Espresso</h3>
+          <p class="text-sm text-gray-600 mt-1">Rich, crema-topped espresso shot.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="text-lg font-bold">$3</div>
+            <button class="orderBtn px-3 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600">Order</button>
+          </div>
+        </div>
+
+        <div class="menuItem p-4 bg-white rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-1" data-category="espresso">
+          <img src="https://images.pexels.com/photos/8952568/pexels-photo-8952568.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Latte" class="w-full h-40 object-cover rounded">
+          <h3 class="mt-3 font-semibold">Café Latte</h3>
+          <p class="text-sm text-gray-600 mt-1">Velvety steamed milk and espresso.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="text-lg font-bold">$4</div>
+            <button class="orderBtn px-3 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600">Order</button>
+          </div>
+        </div>
+
+        <div class="menuItem p-4 bg-white rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-1" data-category="brew">
+          <img src="https://images.pexels.com/photos/17516414/pexels-photo-17516414.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Pour Over" class="w-full h-40 object-cover rounded">
+          <h3 class="mt-3 font-semibold">Single Origin Pour Over</h3>
+          <p class="text-sm text-gray-600 mt-1">Bright, clarifying tasting notes — made to order.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="text-lg font-bold">$5.50</div>
+            <button class="orderBtn px-3 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600">Order</button>
+          </div>
+        </div>
+
+        <div class="menuItem p-4 bg-white rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-1" data-category="brew">
+          <img src="https://images.unsplash.com/photo-1545271428-47057449c00c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwxfHxBZXJvcHJlc3MlMjBmaWx0ZXIlMjBjb2ZmZWUlMjBvbiUyMGElMjB3b29kZW4lMjB0YWJsZSUyMHdpdGglMjBuYXR1cmFsJTIwbGlnaHR8ZW58MHwwfHx8MTc1NTExMTkzNXww&ixlib=rb-4.1.0&q=80&w=1080" alt="Aeropress" class="w-full h-40 object-cover rounded">
+          <h3 class="mt-3 font-semibold">AeroPress</h3>
+          <p class="text-sm text-gray-600 mt-1">Quick, clean cup — excellent clarity.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="text-lg font-bold">$4.50</div>
+            <button class="orderBtn px-3 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600">Order</button>
+          </div>
+        </div>
+
+        <div class="menuItem p-4 bg-white rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-1" data-category="pastry">
+          <img src="https://images.unsplash.com/photo-1532242305467-30c28b81c90b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHw3fHxmbGFreSUyMGNyb2lzc2FudCUyMG9uJTIwYSUyMHdvb2RlbiUyMGJvYXJkJTIwd2l0aCUyMGNydW1icyUyMGFyb3VuZCUyMGFuZCUyMGElMjBjdXAlMjBvZiUyMGNvZmZlZSUyMG5lYXJieXxlbnwwfDB8fHwxNzU1MTExOTM2fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Croissant" class="w-full h-40 object-cover rounded">
+          <h3 class="mt-3 font-semibold">Butter Croissant</h3>
+          <p class="text-sm text-gray-600 mt-1">Made fresh daily; crisp exterior with soft layers.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="text-lg font-bold">$3.25</div>
+            <button class="orderBtn px-3 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600">Order</button>
+          </div>
+        </div>
+
+        <div class="menuItem p-4 bg-white rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-1" data-category="pastry">
+          <img src="https://images.unsplash.com/photo-1535911765168-1fafc87dcfa3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwyfHxhJTIwc2xpY2UlMjBvZiUyMGNob2NvbGF0ZSUyMGNha2UlMjBvbiUyMGElMjBwbGF0ZSUyMHdpdGglMjBsYXR0ZSUyMGluJTIwYmFja2dyb3VuZHxlbnwwfDB8fHwxNzU1MTExOTM2fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Cake" class="w-full h-40 object-cover rounded">
+          <h3 class="mt-3 font-semibold">Chocolate Almond Cake</h3>
+          <p class="text-sm text-gray-600 mt-1">Moist and rich, topped with toasted almonds.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="text-lg font-bold">$4.75</div>
+            <button class="orderBtn px-3 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600">Order</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA / About Snippet -->
+    <section class="w-full px-6 md:px-20 py-10 bg-gradient-to-r from-yellow-50 to-white">
+      <div class="w-full flex flex-col md:flex-row items-center gap-6">
+        <div class="flex-1">
+          <h2 class="text-2xl font-bold">Our Story</h2>
+          <p class="mt-2 text-gray-700">Roast & Ritual began as a neighborhood experiment — a commitment to craft and community. We source responsibly and roast to reveal each bean's voice.</p>
+          <a href="#" onclick="window.parent.handlePreviewNavigation(\'about.html\'); return false;" class="inline-block mt-4 bg-white text-gray-800 px-4 py-2 rounded shadow hover:shadow-md">Learn More</a>
+        </div>
+        <div class="flex-1">
+          <img src="https://images.pexels.com/photos/4921152/pexels-photo-4921152.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Barista" class="w-full rounded-lg shadow-md object-cover h-48">
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="w-full bg-gray-800 text-gray-200 px-6 md:px-20 py-10">
+      <div class="w-full flex flex-col md:flex-row items-start justify-between gap-6">
+        <div class="flex-1">
+          <h3 class="text-lg font-semibold">Roast & Ritual</h3>
+          <p class="text-sm text-gray-300 mt-2">123 Brew Lane • Your City, ST
+            <br>Mon–Fri 7am–6pm • Sat–Sun 8am–5pm</p>
+        </div>
+        <div class="flex-1">
+          <h4 class="font-semibold">Quick Links</h4>
+          <div class="mt-2 flex gap-4">
+            <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="text-sm hover:text-white">Home</a>
+            <a href="#" onclick="window.parent.handlePreviewNavigation(\'about.html\'); return false;" class="text-sm hover:text-white">About</a>
+            <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="text-sm hover:text-white">Contact</a>
+          </div>
+        </div>
+        <div class="flex-1">
+          <h4 class="font-semibold">Follow Us</h4>
+          <div class="mt-2 flex gap-3">
+            <a href="#" class="p-2 bg-gray-700 rounded hover:bg-yellow-600 transition">IG</a>
+            <a href="#" class="p-2 bg-gray-700 rounded hover:bg-yellow-600 transition">FB</a>
+            <a href="#" class="p-2 bg-gray-700 rounded hover:bg-yellow-600 transition">TW</a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-6 text-xs text-gray-400">© <span id="year"></span> Roast & Ritual. All rights reserved.</div>
+    </footer>
+  </main>
+
+  <!-- Newsletter Modal -->
+  <div id="newsletterModal" class="fixed inset-0 hidden items-center justify-center bg-black/50 z-50">
+    <div class="w-full max-w-none md:w-11/12 lg:w-2/3 bg-white rounded-lg p-6 mx-4">
+      <div class="flex items-start justify-between">
+        <div>
+          <h3 class="text-xl font-bold">Join our newsletter</h3>
+          <p class="text-sm text-gray-600 mt-1">Get early access to seasonal roasts and member discounts.</p>
+        </div>
+        <button id="closeModal" class="text-gray-500 hover:text-gray-800">✕</button>
+      </div>
+      <form id="newsletterForm" class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3">
+        <input type="text" id="nnName" placeholder="Your name" class="col-span-1 md:col-span-1 px-4 py-2 border rounded" required>
+        <input type="email" id="nnEmail" placeholder="Email address" class="col-span-1 md:col-span-1 px-4 py-2 border rounded" required>
+        <button type="submit" class="col-span-1 md:col-span-1 bg-yellow-600 text-white px-4 py-2 rounded">Subscribe</button>
+      </form>
+      <div id="newsletterMessage" class="mt-3 text-sm text-green-600 hidden">Thanks — you're subscribed!</div>
+    </div>
+  </div>
+
+  <script>
+    // Basic interactive behavior: menu filtering, mobile menu, newsletter modal, order buttons, footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    mobileBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+    });
+
+    // Newsletter modal
+    const newsletterModal = document.getElementById('newsletterModal');
+    const openNewsletter = document.getElementById('openNewsletter');
+    const mobileSubscribe = document.getElementById('mobileSubscribe');
+    const closeModal = document.getElementById('closeModal');
+    const newsletterForm = document.getElementById('newsletterForm');
+    const newsletterMessage = document.getElementById('newsletterMessage');
+
+    function openModal() { newsletterModal.classList.remove('hidden'); newsletterModal.classList.add('flex'); }
+    function closeModalFn() { newsletterModal.classList.add('hidden'); newsletterModal.classList.remove('flex'); }
+    openNewsletter && openNewsletter.addEventListener('click', openModal);
+    mobileSubscribe && mobileSubscribe.addEventListener('click', openModal);
+    closeModal && closeModal.addEventListener('click', closeModalFn);
+    newsletterModal.addEventListener('click', (e) => { if (e.target === newsletterModal) closeModalFn(); });
+
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('nnName').value.trim();
+      const email = document.getElementById('nnEmail').value.trim();
+      if (!email || !email.includes('@')) {
+        newsletterMessage.textContent = 'Please enter a valid email.';
+        newsletterMessage.classList.remove('text-green-600');
+        newsletterMessage.classList.add('text-red-600');
+        newsletterMessage.classList.remove('hidden');
+        return;
+      }
+      // Fake subscribe flow
+      newsletterMessage.textContent = `Thanks, ${name || 'friend'}! You're subscribed.`;
+      newsletterMessage.classList.remove('text-red-600');
+      newsletterMessage.classList.add('text-green-600');
+      newsletterMessage.classList.remove('hidden');
+      setTimeout(() => { closeModalFn(); newsletterMessage.classList.add('hidden'); newsletterForm.reset(); }, 1600);
+    });
+
+    // Menu filtering
+    const filterBtns = Array.from(document.querySelectorAll('.filterBtn'));
+    const menuItems = Array.from(document.querySelectorAll('.menuItem'));
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+        filterBtns.forEach(b => b.classList.remove('bg-yellow-600', 'text-white')); // reset
+        btn.classList.add('bg-yellow-600', 'text-white');
+        menuItems.forEach(item => {
+          if (filter === 'all' || item.dataset.category === filter) {
+            item.classList.remove('hidden');
+            item.classList.add('opacity-100', 'scale-100');
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // Default filter: all
+    document.querySelector('.filterBtn[data-filter="all"]').click();
+
+    // Order buttons: interactive microflow
+    const orderButtons = Array.from(document.querySelectorAll('.orderBtn'));
+    orderButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const card = e.target.closest('.menuItem');
+        const title = card.querySelector('h3').textContent;
+        btn.disabled = true; btn.textContent = 'Added ✓';
+        btn.classList.remove('bg-yellow-500'); btn.classList.add('bg-green-500');
+        setTimeout(() => { btn.disabled = false; btn.textContent = 'Order'; btn.classList.remove('bg-green-500'); btn.classList.add('bg-yellow-500'); }, 1800);
+      });
+    });
+
+  </script>
+</body>
+</html>
